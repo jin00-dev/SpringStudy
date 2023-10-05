@@ -8,5 +8,25 @@
   <!-- namespace 정보는 외부에서 해당 mapper(xml파일)를 찾을 수 있는 이름 -->
   <mapper namespace="com.itwillbs.mapper.MemberMapper">
   	
+  	<select id="getTime" resultType="string"> 
+  		select now() 
+  	</select>
+  	
+  	<insert id="insertMember">
+  		insert into tbl_member (userid, userpw, username, useremail) 
+  		values(#{userid},#{userpw},#{username},#{useremail})
+  	</insert>
+  
+  	<select id="loginMember" resultType="com.itwillbs.domain.MemberVO">
+  		select * from tbl_member 
+  		where userid = #{userid} and userpw = #{userpw} 
+  	</select>
+  
+  
+  
+  
+  
+  
+  
   
   </mapper>
