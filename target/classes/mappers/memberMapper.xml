@@ -22,8 +22,24 @@
   		where userid = #{userid} and userpw = #{userpw} 
   	</select>
   
+  	<select id="getMember" resultType="com.itwillbs.domain.MemberVO">
+  		select * from tbl_member
+  		where userid = #{userid}
+  	</select>
+  	
+  	<update id="changeMember">
+  		update tbl_member set username = #{username}, updatedate = now()
+  		where userid = #{userid} and userpw = #{userpw}
+  	</update>
   
-  
+  	<delete id="deleteMember">
+  		delete from tbl_member where userid = #{userid} and userpw = #{userpw}
+  	</delete>
+  	
+  	<select id="getMemberList" resultType="com.itwillbs.domain.MemberVO">
+  		select * from tbl_member
+  		where userid != 'admin'
+  	</select>
   
   
   

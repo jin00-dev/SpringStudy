@@ -30,10 +30,16 @@
 	<!-- hikariCP 설정 정보(DB연결정보) -->
 	<bean id="hikariConfig"
 		  class="com.zaxxer.hikari.HikariConfig">
-		  <property name="driverClassName"
+<!-- 		  <property name="driverClassName"
 		  			value="com.mysql.cj.jdbc.Driver"/>
 		  <property name="jdbcUrl"
 		  			value="jdbc:mysql://localhost:3306/springdb?serverTimezone=Asia/Seoul&amp;useSSL=false"/>
+ -->
+ 		  <property name="driverClassName"
+		  			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+		  <property name="jdbcUrl"
+		  			value="jdbc:log4jdbc:mysql://localhost:3306/springdb?serverTimezone=Asia/Seoul&amp;useSSL=false"/>
+
 		  <property name="username" value="root"></property>
 		  <property name="password" value="1234"></property>
 	</bean>
@@ -70,7 +76,7 @@
 	<!-- SqlSessionTemplate 객체 - 디비 연결(자동처리), MyBatis 설정, sql 실행, 자원해제, 트랜젝션관리, 쓰레드 안정성 관리  -->
 	
 	<!-- com.itwillbs.persistence 패키지 정보를 스캔(객체가 있는지 체크) -->
-	<!-- 이미 만들어져 있는 객체를 불러와서 사용 할 수 있다. -->
+	<!-- 이미 만들어져 있는 객체를 불러와서 사용 할 수 있다. / MemberDAOImpl 가져온 것-->
 	<context:component-scan base-package="com.itwillbs.persistence"/>
 	
 	
