@@ -34,7 +34,9 @@
 	${memberVO }<hr> <!-- 얘는 왜 되지요??????? -->
 <%-- 	${requestScope }<!-- ????????? --> --%>
 	
+	<h3>Model 객체 사용</h3>
 	${DBVO }<hr>
+<%-- 	${memberVO }<hr> --%>
 	
 	
 	
